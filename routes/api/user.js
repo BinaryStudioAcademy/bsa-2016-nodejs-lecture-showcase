@@ -29,10 +29,7 @@ router.get('/:id', (req, res, next) => {
 router.post('/', (req, res, next) => {
 	const obj = req.body;
 	userService.add(obj, (err, data) => {
-		if (!err){
-			res.data = data.rows[0];
-		}
-		res.json(res.data);
+		res.end();
 	});
 });
 
